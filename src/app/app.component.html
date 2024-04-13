@@ -1,0 +1,61 @@
+<style>
+
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h1 {
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  .btn {
+    width: 50px;
+    height: 30px;
+    background-color: rgb(142, 142, 241);
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    text-transform: uppercase;
+  }
+  .text {
+    width: 700px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .posts{
+    width: 80vh;
+    background-color: rgb(84, 84, 191);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    margin-top: 40px;
+    border-radius: 5px;
+    color: white;
+  }
+</style>
+
+<div class="container">
+  <h1>memo</h1>
+
+  <div> 
+      <input type="text" [(ngModel)] = 'said' placeholder="say something" class="text"/> 
+      <input type="button" value="post" (click)="say()" class="btn"/> 
+  </div>
+  
+  <div>
+      <h1>Posts</h1>
+      <div *ngFor="let post of speech" class="posts">
+          <p>{{post}}</p>   <p>&times;</p>
+      </div>
+  </div>
+</div>
